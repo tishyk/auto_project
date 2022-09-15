@@ -14,7 +14,6 @@ pipeline {
     stages {
         stage('Build Stage') {
             steps { script {
-                println(common.GITHUB_USERNAME)
                 common.show_branches(common.KNOWN_BRANCHES)
             }}
         }
