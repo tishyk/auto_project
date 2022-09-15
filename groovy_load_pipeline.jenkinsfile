@@ -1,5 +1,5 @@
 
-def importCommon() {common = load "common_functions.groovy"; return common; }
+common = load "common_functions.groovy"
 
 pipeline {
     agent 'any'
@@ -9,7 +9,6 @@ pipeline {
         choice(name: "test_target", choices:["all", "site1", "site2", "locals"],  description: "Run test stage for test targets [all, site1, site2, locals]")
         }
     environment {
-      common = importCommon()
       JOB_NAME = "hello_from_groovy"
     }
     stages {
