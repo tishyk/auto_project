@@ -6,7 +6,7 @@ pipeline {
         choice(name: "test_target", choices:["all", "site1", "site2", "locals"],  description: "Run test stage for test targets [all, site1, site2, locals]")
         }
     stages {
-        stage('Build') {
+        stage('Build Stage') {
             steps {
                 println("Show dev_branch")
                 sh 'python3 --version'
@@ -14,7 +14,7 @@ pipeline {
                 
             }
         }
-        stage(expression {'Test ${params.test_target}'}) {
+        stage(expression {'Test Stage'}) {
             when {
                 beforeAgent true
                 expression { $params.run_tests == true}
