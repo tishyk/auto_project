@@ -1,6 +1,3 @@
-
-common = load "common_functions.groovy"
-
 pipeline {
     agent 'any'
     parameters {
@@ -10,6 +7,7 @@ pipeline {
         }
     environment {
       JOB_NAME = "hello_from_groovy"
+      common = load "${REPO_PATH}/common_functions.groovy"
     }
     stages {
         stage('Build Stage') {
