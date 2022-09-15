@@ -13,21 +13,21 @@ pipeline {
     }
     stages {
         stage('Build Stage') {
-            steps {
+            steps { script {
                 println(common.GITHUB_USERNAME)
                 common.show_branches(common.KNOWN_BRANCHES)
-            }
+            }}
         }
         stage('Test Stage') {
             when {
                 beforeAgent true
                 expression { params.run_tests == true}
                 }
-            steps {
+            steps { script {
                 println("Tests target ${params.test_target}")
                 sh 'python3 --version'
                 sh "pwd && ls -la"
-            }
+            }}
         }      
     }
 }
