@@ -17,7 +17,7 @@ pipeline {
         stage('Test Stage') {
             when {
                 beforeAgent true
-                expression { ${params.run_tests} == true}
+                expression { params.run_tests == true}
                 }
             steps {
                 println("Show system installed python version for a tests")
