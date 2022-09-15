@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Build Stage') {
             steps { script {
-                common.show_branches()
+                common.show_branches(common.KNOWN_BRANCHES)
             }}
         }
         stage('Test Stage') {
