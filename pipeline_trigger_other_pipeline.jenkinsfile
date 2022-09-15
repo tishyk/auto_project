@@ -11,24 +11,24 @@ pipeline {
         //}
     stages {
         stage('Test Site1') {
-            steps {
+            steps { script {
                 jobParameters.add([$class: "StringParameterValue", name: "test_target", value: "site1"])
                 
                 def job_build = build job: "pipeline_with_parameters", parameters: jobParameters, propagate: false, wait: true
                 if ( job_build.getResult() == "FAILURE") {
                   currentBuild.result = "FAILURE"
                   }
-            }
+            }}
         }     
         stage('Test Site2') {
-            steps {
+            steps { script {
                 jobParameters.add([$class: "StringParameterValue", name: "test_target", value: "site1"])
 
                 def job_build = build job: "pipeline_with_parameters", parameters: jobParameters, propagate: false, wait: true
                 if ( job_build.getResult() == "FAILURE") {
                   currentBuild.result = "FAILURE"
                   }
-            }
+            }}
         }
     }
 }
