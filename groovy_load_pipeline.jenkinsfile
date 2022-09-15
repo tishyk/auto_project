@@ -7,6 +7,7 @@ pipeline {
         }
     environment {
       JOB_NAME = "hello_from_groovy"
+      REPO_PATH = pwd()
       common = load "${REPO_PATH}/common_functions.groovy"
     }
     stages {
