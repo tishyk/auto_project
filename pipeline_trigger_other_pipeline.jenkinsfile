@@ -1,6 +1,6 @@
 def jobParameters = []
 jobParameters.add([$class: "StringParameterValue", name: "dev_branch", value: "main"])
-jobParameters.add([$class: "SBooleanParameterValue", name: "run_tests", value: true])
+jobParameters.add([$class: "BooleanParameterValue", name: "run_tests", value: true])
 
 pipeline {
     agent {label "master"}
