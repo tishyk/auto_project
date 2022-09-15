@@ -1,7 +1,7 @@
 pipeline {
     agent 'any'
     parameters {
-        string(name: "dev_branch", defaultValue: "develop", description: "which branch to use")
+        string(name: "dev_branch", defaultValue: "main", description: "which branch to use")
         booleanParam(name: "run_tests", description: "Run test stage from dev_branch repo", defaultValue: false)
         choice(name: "test_target", choices:["all", "site1", "site2", "locals"],  description: "Run test stage for test targets [all, site1, site2, locals]")
         }
