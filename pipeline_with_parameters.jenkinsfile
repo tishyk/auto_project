@@ -14,7 +14,7 @@ pipeline {
                 
             }
         }
-        stage(expression {'Test Stage'}) {
+        stage('Test Stage') {
             when {
                 beforeAgent true
                 expression { $params.run_tests == true}
