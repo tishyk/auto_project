@@ -6,5 +6,20 @@ pipeline {
                 sh 'python3 --version'
             }
         }
+        stage('test') {
+            steps {
+                sh 'python3 --version'
+            }
+        }
+        stage('Post actions') {
+            steps {
+                sh 'python3 --version'
+            }
+        }
+         stage('Send Mail') {
+            steps {
+                sh 'python3 --version'
+            }
+        }
     }
 }
