@@ -21,7 +21,6 @@ pipeline {
                 }
             steps {
                 println("Tests target ${params.test_target}")
-                sh 'python3 --version'
                 sh "pwd && ls -la"
             }
         }      
