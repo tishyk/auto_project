@@ -1,4 +1,5 @@
-
+REPO_PATH = pwd()
+def importCommon() {common = load "${REPO_PATH}/common_functions.groovy"; return common; }
 
 
 pipeline {
@@ -10,9 +11,7 @@ pipeline {
         }
     environment {
       JOB_NAME = "hello_from_groovy"
-      REPO_PATH = pwd()
-      println("${REPO_PATH}"
-      common = load "${REPO_PATH}/common_functions.groovy"
+      common = importCommon()
     }
     stages {
         stage('Build Stage') {
