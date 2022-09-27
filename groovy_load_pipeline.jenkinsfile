@@ -1,6 +1,3 @@
-def REPO_PATH = pwd()
-def importCommon() {common = load "${REPO_PATH}/common_functions.groovy"; return common; }
-
 pipeline {
     agent 'any'
     parameters {
@@ -10,6 +7,8 @@ pipeline {
         }
     environment {
       JOB_NAME = "hello_from_groovy"
+      REPO_PATH = pwd()
+      importCommon() {common = load "${REPO_PATH}/common_functions.groovy"; return common; }
       common = importCommon()
     }
     stages {
