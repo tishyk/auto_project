@@ -31,6 +31,9 @@ pipeline {
                 println("Tests target ${params.test_target}")
                 sh 'python3 --version'
                 sh "pwd && ls -la"
+                 for (branch in ["main", "develop"]) {
+                    pritnl("${branch}")
+                 }
             }}
         }      
     }
