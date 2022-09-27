@@ -6,7 +6,7 @@ pipeline {
         choice(name: "test_target", choices:["all", "site1", "site2", "locals"],  description: "Run test stage for test targets [all, site1, site2, locals]")
         }
     environment {
-      PATH = "/var/lib/jenkins/workspace/TestProject/groovy_load_pipeline"
+      PATH = pwd()
       JOB_NAME = "hello_from_groovy"
       common = load "${PATH}/common_functions.groovy"
     }
@@ -14,7 +14,6 @@ pipeline {
         stage('Build Stage') {
             steps { script {
                 sh("pwd")
-                common.show_branches()
                 if (common) {
                     common.show_branches()
                 }
