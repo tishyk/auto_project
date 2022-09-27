@@ -1,5 +1,4 @@
-PATH = pwd()
-// "/var/lib/jenkins/workspace/TestProject/groovy_load_pipeline"
+PATH = "/var/lib/jenkins/workspace/TestProject/groovy_load_pipeline"
 def importCommon() {common = load "${PATH}/common_functions.groovy"; return common; }
 
 pipeline {
