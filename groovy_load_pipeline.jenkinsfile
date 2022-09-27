@@ -1,3 +1,6 @@
+PATH = "/var/lib/jenkins/workspace/TestProject/groovy_load_pipeline"
+def importCommon() {common = load "${PATH}/common_functions.groovy"; return common; }
+
 pipeline {
     agent 'any'
     parameters {
@@ -6,9 +9,8 @@ pipeline {
         choice(name: "test_target", choices:["all", "site1", "site2", "locals"],  description: "Run test stage for test targets [all, site1, site2, locals]")
         }
     environment {
-      PATH = pwd()
       JOB_NAME = "hello_from_groovy"
-      common = load {"${PATH}/common_functions.groovy"}
+      common = importCommon()
     }
     stages {
         stage('Build Stage') {
