@@ -24,3 +24,4 @@ def check_branch(branch){
   }
   return known_branch
 }
+return this;
