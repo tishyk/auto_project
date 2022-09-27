@@ -2,10 +2,9 @@ import hudson.model.User
 
 HTML_REPORT_PATH = ""
 GITHUB_USERNAME = "tishyk"
-KNOWN_BRANCHES = ["main", "develop"]
 
 def show_branches() {
-  for (branch in KNOWN_BRANCHES) {
+  for (branch in ["main", "develop"]) {
     pritnl("${branch}")
     }
 }
