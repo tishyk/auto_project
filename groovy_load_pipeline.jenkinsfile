@@ -8,7 +8,7 @@ pipeline {
     environment {
       PATH = pwd()
       JOB_NAME = "hello_from_groovy"
-      common = load "${PATH}/common_functions.groovy"
+      common = load {"${PATH}/common_functions.groovy"}
     }
     stages {
         stage('Build Stage') {
