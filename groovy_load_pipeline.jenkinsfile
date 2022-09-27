@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('Build Stage') {
             steps { script {
-                sh("echo pwd")
+                sh("pwd")
                 common.show_branches()
             }}
         }
