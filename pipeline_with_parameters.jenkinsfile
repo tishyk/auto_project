@@ -8,11 +8,10 @@ pipeline {
     stages {
         stage('Build Stage') {
             steps {
-                sh 'echo "hello ${params.dev_branch}"'
+                sh 'echo ${params.dev_branch}'
                 println("Show dev_branch")
                 sh 'python3 --version'
                 println("Run stage with parameter: ${params.dev_branch}")
-                
             }
         }
         stage('Test Stage') {
