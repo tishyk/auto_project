@@ -17,7 +17,9 @@ pipeline {
         stage('Build Stage') {
             steps { script {
                 sh("pwd")
-                common.show_branches()
+                if (common) {
+                    common.show_branches()
+                }
             }}
         }
         stage('Test Stage') {
