@@ -8,6 +8,7 @@ pipeline {
     stages {
         stage('Build Stage') {
             steps {
+                sh 'echo "hello ${params.dev_branch}"'
                 println("Show dev_branch")
                 sh 'python3 --version'
                 println("Run stage with parameter: ${params.dev_branch}")
@@ -17,7 +18,7 @@ pipeline {
         stage('Test Stage') {
             when {
                 beforeAgent true
-                expression { params.run_tests == true}
+                expression { params.run_tests }
                 }
             steps {
                 println("Tests target ${params.test_target}")
