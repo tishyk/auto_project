@@ -32,7 +32,7 @@ pipeline {
                 sh 'python3 --version'
                 sh "pwd && ls -la"
                  for (branch in ["main", "develop"]) {
-                    printl("${branch}")
+                    println("${branch}")
                  }
             }}
         }      
