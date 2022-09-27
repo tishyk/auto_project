@@ -8,8 +8,7 @@ pipeline {
     environment {
       JOB_NAME = "hello_from_groovy"
       REPO_PATH = pwd()
-      importCommon() {common = load "${REPO_PATH}/common_functions.groovy"; return common; }
-      common = importCommon()
+      common = load "${REPO_PATH}/common_functions.groovy"
     }
     stages {
         stage('Build Stage') {
