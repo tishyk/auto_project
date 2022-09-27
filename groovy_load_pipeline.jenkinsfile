@@ -1,4 +1,4 @@
-REPO_PATH = pwd()
+def REPO_PATH = pwd()
 def importCommon() {common = load "${REPO_PATH}/common_functions.groovy"; return common; }
 
 pipeline {
