@@ -1,4 +1,4 @@
-def importCommon() {common = load "common_functions.groovy"; return common; }
+def importCommon() {common = load "./common_functions.groovy"; return common; }
 
 
 pipeline {
