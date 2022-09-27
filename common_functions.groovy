@@ -5,7 +5,7 @@ GITHUB_USERNAME = "tishyk"
 
 def show_branches() {
   for (branch in ["main", "develop"]) {
-    pritnl("${branch}")
+    println("${branch}")
     }
 }
 
@@ -24,4 +24,4 @@ def check_branch(branch){
   }
   return known_branch
 }
-return this
+return this;
