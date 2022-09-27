@@ -1,4 +1,5 @@
-def importCommon() {common = load "common_functions.groovy"; return common; }
+PATH = "/var/lib/jenkins/workspace/TestProject/groovy_load_pipeline"
+def importCommon() {common = load "${PATH}common_functions.groovy"; return common; }
 
 
 pipeline {
