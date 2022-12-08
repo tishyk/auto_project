@@ -1,5 +1,5 @@
 rm -rf playwright_venv ||true; python3 -m virtualenv playwright_venv || true; \
 	. playwright_venv/bin/activate \
-	&& pip install -e . \
-	&& pip install -e src/ \
-	&& python -m playwright install
+	&& pip3 install -e . \
+	&& pip3 install -e src/ \
+	&& python3 -m playwright install
