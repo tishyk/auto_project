@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Framework Setup') {
             steps {
-                sh "chown -R tishyk:tishyk . && ../auto_projecchmod +x install.sh && ./install.sh"
+                sh "chown -R tishyk:tishyk . && chmod +x install.sh && ./install.sh"
             }
         }
         stage('Site 1 Validation') {
