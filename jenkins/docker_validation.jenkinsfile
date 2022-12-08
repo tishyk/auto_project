@@ -1,5 +1,7 @@
 pipeline {
-    agent { docker  { image 'framework_image:2022-12-08' } }
+    agent { docker  { 
+    	image 'framework_image:2022-12-08'
+	args '-e USER="tishyk"} }
     stages {
         stage('Framework Setup') {
             steps {
