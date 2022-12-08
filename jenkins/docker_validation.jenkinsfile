@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Framework Setup') {
             steps {
-                sh "chmod +x install.sh && ./install.sh"
+                sh "chmod +x install.sh && sudo ./install.sh"
             }
         }
         stage('Site 1 Validation') {
